@@ -1,8 +1,15 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import './Login.css';
 
 class Login extends React.Component {
+    static propTypes = {
+        onSubmit: PropTypes.func,
+        errorLogin: PropTypes.bool
+    }
+
     state = { username: '', password: '' }
 
     handleUserName = (event) => {

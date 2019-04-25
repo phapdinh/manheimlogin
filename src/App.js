@@ -1,6 +1,8 @@
 import React from 'react';
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 
@@ -44,6 +46,10 @@ function LockedRoute(props) {
   } else {
     return <Route {...props} />
   }
+}
+
+LockedRoute.propTypes = {
+  loggedin: PropTypes.bool
 }
 
 export default App;
