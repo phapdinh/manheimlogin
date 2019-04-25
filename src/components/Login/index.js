@@ -5,22 +5,23 @@ import './Login.css';
 class Login extends React.Component {
     state = { username: '', password: '' }
 
-    handleUserName = (event, input) => {
+    handleUserName = (event) => {
         this.setState({ username: event.target.value });
     }
 
-    handlePassword = (event, input) => {
+    handlePassword = (event) => {
         this.setState({ password: event.target.value });
     }
 
     render() {
-        const { onSubmit } = this.props;
+        const { onSubmit, errorLogin } = this.props;
 
         return <form>
             <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleUserName} />
             <br />
             <input type="password" value={this.state.password} placeholder="Password" onChange={this.handlePassword} />
             <br />
+            {errorLogin && <div className="alert_error">Login Failure</div>}
             <button type="button" onClick={() => onSubmit(this.state.username, this.state.password)}>Sign In</button>
         </form>
     }
