@@ -5,15 +5,23 @@
     flex-direction: column;
 }
 
+input {
+    margin: 1vh 0;
+}
+
 .alert_error {
     background-color: red;
     color: white;
 }
 
+input ~ .alert_error {
+    margin: 1vh 0;
+}
+
 .button {
     background-color: aqua;
     cursor: pointer;
-    margin: auto;
+    margin-top: 1vh;
     border: none;
     border-radius: 4px;
     text-align: center;
